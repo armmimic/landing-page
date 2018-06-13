@@ -11,8 +11,27 @@
 				<li><a href="#development" class="link-menu">Milestones</a></li>
 				<li><a href="#footer" class="link-menu">Contacts</a></li>
 			</ul>
-			<a href="#" class="btn btn-transparent">Subscribe</a>
+			<a href="#" class="btn btn-transparent" data-izimodal-open="#subscribe" data-izimodal-transitionin="fadeInDown">Subscribe</a>
 			<div class="mobile-menu-btn visible-sm"><span></span></div>
+		</div>
+	</div>
+	<div id="subscribe" class="modal"> 
+		<a href="javascript:void(0)" class="iziModal-button iziModal-button-close" data-izimodal-close=""></a>
+		<div class="modal-body">
+			<div class="form-holder">
+				<h2>Subscribe for getting permission</h2>
+				<form action="#" class="subscribe-form">
+					<input type="text" class="form-control" name="firstName" placeholder="First Name">
+					<input type="text" class="form-control" name="lastName" placeholder="Last Name">
+					<input type="email" class="form-control" name="email" placeholder="Email">
+					<input type="phone" class="form-control" name="phone" placeholder="Phone number">
+					<button class="btn btn-primary">Subscribe</button>
+				</form>
+			</div>
+
+			<div class="thanks">
+				<h3 class="thanks-title">Thank you! We've received your message. Our team will be contacting you shortly.</h3>
+			</div>
 		</div>
 	</div>
 </header>

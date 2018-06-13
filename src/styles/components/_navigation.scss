@@ -67,7 +67,10 @@
 
 			@media #{$md-max} {
 				opacity: 1;
-				background: $dark-blue;
+			}
+
+			@media #{$sm-max} {
+				background: darken($brand-color, 5%);
 			}
 
 			&:before {
