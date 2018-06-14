@@ -24,10 +24,17 @@ $(function(){
         $('.subscribe-form').submit(function (e) {
             e.preventDefault();
             const form = e.target;
+            var result = { };
+            $.each($(form).serializeArray(), function() {
+                    result[this.name] = this.value;
+            });
             $.ajax({
-                type: "GET",
+                url: "https://api2.autopilothq.com/v1/contact",
+                type: "POST",
+                headers: { "autopilotapikey": "" },
                 contentType: "application/json; charset=utf-8",
-                data: $(form).serialize(),
+                //autopilotapikey: 'd1f44af1b8f24e3b862596940938ec2c',
+                data: JSON.stringify( { contact: result } ),
                 success: function (data) {
                     $(form).closest('.modal').find('.thanks').css('display', 'block');
                     $(form).closest('.form-holder').css('display', 'none');
@@ -92,7 +99,7 @@ $(function(){
 
         if ($(scroll_el).length != 0 && (win.width() > 768)) {
             e.preventDefault();
-            $('html, body').animate({ scrollTop: $(scroll_el).offset().top }, 900); 
+            $('html, body').animate({ scrollTop: $(scroll_el).offset().top }, 900);
             $(this).addClass('active');
         }
 
