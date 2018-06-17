@@ -21,7 +21,7 @@ $(function(){
     }
 
     function submitForm() {
-        $('.subscribe-form').submit(function (e) {
+        $('.subscribe-news-form').submit(function (e) {
             e.preventDefault();
             const form = e.target;
             var result = { };
@@ -33,11 +33,14 @@ $(function(){
                 type: "POST",
                 headers: { "autopilotapikey": "" },
                 contentType: "application/json; charset=utf-8",
-                //autopilotapikey: 'd1f44af1b8f24e3b862596940938ec2c',
                 data: JSON.stringify( { contact: result } ),
                 success: function (data) {
-                    $(form).closest('.modal').find('.thanks').css('display', 'block');
-                    $(form).closest('.form-holder').css('display', 'none');
+                    $("#yolo-thanks").find('.form-holder').css('display', 'block');
+                    $("#email-sub").find('.message').text("Thank you!");
+                    $("#email-sub").find('.subscribe-news-form').css('display', 'none');
+                    setTimeout(function(){
+                          $("#email-sub").css({opacity: 1.0, visibility: "visible"}).animate({opacity: 0}, 800);
+                    }, 1000);
                 },
                 error: function (err) {
                     console.log("Error", err);
