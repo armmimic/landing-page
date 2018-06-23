@@ -59,11 +59,12 @@
 
 		@media #{$md-max} {
 			display: block;
-			padding: 10px 0;
+			// padding: 10px 0;
 		}
 
 		&:hover {
 			text-decoration: none;
+			color: $white;
 
 			@media #{$md-max} {
 				opacity: 1;

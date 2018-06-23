@@ -16,8 +16,10 @@
 		min-width: 120px;
 	}
 	
-	&:hover {
+	&:hover,
+	&:focus {
 		text-decoration: none;
+		color: inherit;
 	}
 
 	&.btn-big {
@@ -39,6 +41,10 @@
 		background: $white;
 		color: $brand-color;
 	}
+
+	&:focus {
+		color: $brand-color;
+	}
 }
 
 .btn-primary {
@@ -51,6 +57,11 @@
 		border-color: $brand-color;
 		color: $brand-color;
 	}
+
+	&:focus {
+		background: $brand-color;
+		color: $white;
+	}
 }
 
 .btn-default {
@@ -60,6 +71,11 @@
 	&:hover {
 		background: $brand-color;
 		color: $white;
+	}
+
+	&:focus {
+		background-color: rgba(0, 195, 230, 0.1);
+		color: $brand-color;
 	}
 }
 

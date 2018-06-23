@@ -60,7 +60,7 @@
 			&:first-child {
 				margin-right: 24px;
 				
-				@media #{$sm-max} {
+				@media #{$lg-max} {
 					margin-right: 12px;
 				}
 
@@ -190,7 +190,7 @@
 .block-phase {
 	position: relative;
 	margin-top: -42px;
-	height: 135px;
+	height: 140px;
 	overflow: hidden;
 }
 
@@ -231,6 +231,22 @@
 		@media #{$sm-max} {
 			width: 100%;
 			float: none;
+		}
+	}
+
+	.block-phase-right {
+		@media #{$sm-max} {
+			font-size: 0;
+		}
+		.block-phase-holder {
+			@media #{$sm-max} {
+				width: 50%;
+				font-size: 14px;
+			}
+
+			@media #{$xs-max} {
+				width: 100%;
+			}
 		}
 	}
 
@@ -310,9 +326,13 @@
 .block-phase-holder {
 	width: 165px;
 	position: absolute;
-	top: -195px;
+	top: -200px;
 	left: auto;
 	padding-bottom: 65px;
+
+	@media #{$md-max} {
+		top: -203px;
+	}
 
 	@media #{$sm-max} {
 		position: static;
@@ -390,8 +410,8 @@
 		}
 
 		&.block-phase-4 {
-			right: 38%;
-			width: 290px;
+			right: 37%;
+			width: 300px;
 		}
 
 		&.block-phase-5 {
@@ -433,6 +453,10 @@
 			opacity: 1;
 			transition: none;
 		}
+
+		@media #{$xs-max} {
+			text-align: center;
+		}
 	}
 
 	.title {
@@ -441,6 +465,11 @@
 		color: $sea-blue;
 		text-align: right;
 		max-width: 130px;
+
+		@media #{$xs-max} {
+			text-align: center;
+			max-width: 100%;
+		}
 	}
 
 	time {
@@ -453,6 +482,11 @@
 		text-align: right;
 		padding-top: 3px;
 		max-width: 130px;
+
+		@media #{$xs-max} {
+			text-align: center;
+			max-width: 100%;
+		}
 	}
 }
 
@@ -585,6 +619,8 @@
 }
 
 .development-section {
+	padding-bottom: 95px;
+
 	&.bg {
 		&.bg-right {
 			&:before {
