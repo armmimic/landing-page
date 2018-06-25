@@ -118,7 +118,7 @@ $(function(){
     }
 
     function initModals() {
-        $("#privacy, #ownership, #monetization, #team-1, #team-2, #team-3, #team-4, #team-5, #team-6, #subscribe").iziModal({
+        $("#video, #privacy, #ownership, #monetization, #team-1, #team-2, #team-3, #team-4, #team-5, #team-6, #subscribe").iziModal({
             onClosed: function(modal,event) {
                 document.getElementById(modal.id).getElementsByTagName('form')[0].reset();
                 $('#' + modal.id).find('.form-holder').css('display', '');
@@ -126,14 +126,24 @@ $(function(){
             }
         });
 
-        $("#video").iziModal({
-            history: false,
-            // iframe : true,
-            fullscreen: true,
-            headerColor: '#000000',
-            group: 'group1',
-            loop: true
-        });
+        // $("#video").iziModal({
+        //     onClosed: function(modal,event) {
+        //         var iframes = document.querySelectorAll('iframe');
+        //         for (var i = 0; i < iframes.length; i++) {
+        //             iframes[i].parentNode.removeChild(iframes[i]);
+        //         }
+        //     },
+
+        //     onOpened:  function(modal,event) {
+
+        //         // console.log(12);
+
+        //         var iframe = document.createElement('iframe');
+        //         iframe.style.display = "none";
+        //         iframe.src = 'https://www.youtube.com/embed/ZGtuJWt6eGA?autoplay=1';
+        //         document.document.getElementById('video').appendChild(iframe);
+        //     }
+        // });
     }
 
     function animatiionPhase() {
