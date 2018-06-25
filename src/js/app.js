@@ -118,12 +118,21 @@ $(function(){
     }
 
     function initModals() {
-        $("#modal, #privacy, #ownership, #monetization, #team-1, #team-2, #team-3, #team-4, #team-5, #team-6, #subscribe").iziModal({
+        $("#privacy, #ownership, #monetization, #team-1, #team-2, #team-3, #team-4, #team-5, #team-6, #subscribe").iziModal({
             onClosed: function(modal,event) {
                 document.getElementById(modal.id).getElementsByTagName('form')[0].reset();
                 $('#' + modal.id).find('.form-holder').css('display', '');
                 $('#' + modal.id).find('.thanks').css('display', '');
             }
+        });
+
+        $("#video").iziModal({
+            history: false,
+            // iframe : true,
+            fullscreen: true,
+            headerColor: '#000000',
+            group: 'group1',
+            loop: true
         });
     }
 
@@ -142,10 +151,6 @@ $(function(){
             innerHeightWindow = window.innerHeight,
             digitPosition = 0,
             mobile = detectmob();
-        // console.log('phasePosition', phasePosition)
-        // console.log('phasePosition - innerHeightWindow/3', phasePosition - innerHeightWindow/3);
-        // console.log('phasePosition + innerHeightWindow/3', phasePosition + innerHeightWindow + phaseHeight)
-        // console.log('$(this).scrollTop()', $(this).scrollTop())
         if(win.scrollTop()>= phasePosition - innerHeightWindow/3 && win.scrollTop()<= phasePosition + innerHeightWindow){
             phase.addClass('animated');
         }
@@ -171,5 +176,22 @@ $(function(){
             return false;
         }
     }
+
+    var videos  = $(".video");
+ 
+        videos.on("click", function(){
+            var elm = $(this),
+                conts   = elm.contents(),
+                le      = conts.length,
+                ifr     = null;
+ 
+            for(var i = 0; i<le; i++){
+              if(conts[i].nodeType == 8) ifr = conts[i].textContent;
+            }
+ 
+            elm.addClass("player").html(ifr);
+            elm.off("click");
+        });
+
 
 });

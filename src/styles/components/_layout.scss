@@ -23,6 +23,11 @@ body {
 	position: relative;
 	overflow: hidden;
 	min-height: 100%;
+	font-family: $default-font;
+	font-size: $default-font-size;
+	font-weight: $default-font-weight;
+	font-style: $default-font-style;
+	line-height: $default-line-height;
 }
 
 .container {

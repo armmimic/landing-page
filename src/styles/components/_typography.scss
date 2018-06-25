@@ -1,54 +1,56 @@
-h1, h2, h3, h4, h5 { 
-	font-family: $archivo;
-	font-weight: 600; 
-}
-
-h1 {
-	color: $dark-blue;
-	font-size: 44px;
-	margin-bottom: 30px;
-
-	@media #{$md-max} {
-		font-size: 34px;
-		margin-bottom: 20px;
-		line-height: 1.2;
+.layout {
+	h1, h2, h3, h4, h5 { 
+		font-family: $archivo;
+		font-weight: 600; 
 	}
 
-	@media #{$xs-max} {
-		font-size: 30px;
+	h1 {
+		color: $dark-blue;
+		font-size: 44px;
+		margin-bottom: 30px;
+
+		@media #{$md-max} {
+			font-size: 34px;
+			margin-bottom: 20px;
+			line-height: 1.2;
+		}
+
+		@media #{$xs-max} {
+			font-size: 30px;
+		}
 	}
-}
 
-h2 {
-	color: $dark-blue;
-	font-size: 35px;
-	margin-bottom: 45px;
-	text-align: center;
+	h2 {
+		color: $dark-blue;
+		font-size: 35px;
+		margin-bottom: 45px;
+		text-align: center;
 
-	@media #{$md-max} {
-		font-size: 25px;
-		margin-bottom: 25px;
+		@media #{$md-max} {
+			font-size: 25px;
+			margin-bottom: 25px;
+		}
 	}
-}
 
-h3 {
-	color: $dark-blue;
-	font-size: 26px;
-	margin-bottom: 16px;
+	h3 {
+		color: $dark-blue;
+		font-size: 26px;
+		margin-bottom: 16px;
 
-	@media #{$md-max} {
-		font-size: 20px;
+		@media #{$md-max} {
+			font-size: 20px;
+		}
 	}
-}
 
-h4 {
-	color: $dark-blue;
-	font-size: 18px;
-}
+	h4 {
+		color: $dark-blue;
+		font-size: 18px;
+	}
 
-h5 {
-	color: $dark-blue;
-	font-size: 16px;
-	margin-bottom: 16px;
-	text-transform: uppercase;
+	h5 {
+		color: $dark-blue;
+		font-size: 16px;
+		margin-bottom: 16px;
+		text-transform: uppercase;
+	}
 }

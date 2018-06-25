@@ -13,7 +13,7 @@
 	}
 
 	.col {
-		width: 25%;
+		width: 33.3%;
 
 		&:first-child {
 			@media #{$md-max} {
@@ -27,7 +27,7 @@
 			}
 		}
 
-		@media #{$md-max} {
+		@media #{$sm-max} {
 			width: 50%;
 		}
 
