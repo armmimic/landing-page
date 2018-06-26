@@ -119,31 +119,27 @@ $(function(){
 
     function initModals() {
         $("#video, #privacy, #ownership, #monetization, #team-1, #team-2, #team-3, #team-4, #team-5, #team-6, #subscribe").iziModal({
+            onOpened: function(modal,event) {
+            },
             onClosed: function(modal,event) {
-                document.getElementById(modal.id).getElementsByTagName('form')[0].reset();
-                $('#' + modal.id).find('.form-holder').css('display', '');
-                $('#' + modal.id).find('.thanks').css('display', '');
-            }
+                if (document.getElementById(modal.id).getElementsByTagName('form').length) {                    
+                    document.getElementById(modal.id).getElementsByTagName('form')[0].reset();
+                    $('#' + modal.id).find('.form-holder').css('display', '');
+                    $('#' + modal.id).find('.thanks').css('display', '');
+                }
+
+                if ($('#' + modal.id).find('#video-player').length) {
+                    document.getElementById('video-player').contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+                }
+                
+            },
         });
 
-        // $("#video").iziModal({
-        //     onClosed: function(modal,event) {
-        //         var iframes = document.querySelectorAll('iframe');
-        //         for (var i = 0; i < iframes.length; i++) {
-        //             iframes[i].parentNode.removeChild(iframes[i]);
-        //         }
-        //     },
-
-        //     onOpened:  function(modal,event) {
-
-        //         // console.log(12);
-
-        //         var iframe = document.createElement('iframe');
-        //         iframe.style.display = "none";
-        //         iframe.src = 'https://www.youtube.com/embed/ZGtuJWt6eGA?autoplay=1';
-        //         document.document.getElementById('video').appendChild(iframe);
-        //     }
-        // });
+        const videos  = $(".video-button");  
+        videos.on("click", function(){ 
+            document.getElementById('video-player').contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');                        
+            $(".video").addClass("player");
+        });
     }
 
     function animatiionPhase() {
@@ -186,22 +182,6 @@ $(function(){
             return false;
         }
     }
-
-    var videos  = $(".video");
- 
-        videos.on("click", function(){
-            var elm = $(this),
-                conts   = elm.contents(),
-                le      = conts.length,
-                ifr     = null;
- 
-            for(var i = 0; i<le; i++){
-              if(conts[i].nodeType == 8) ifr = conts[i].textContent;
-            }
- 
-            elm.addClass("player").html(ifr);
-            elm.off("click");
-        });
-
-
 });
+
+

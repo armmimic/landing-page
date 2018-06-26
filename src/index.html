@@ -33,9 +33,12 @@
 			</div>
 			<div id="video" class="video-modal">
 				<a href="javascript:void(0)" class="iziModal-button iziModal-button-close" data-izimodal-close=""></a>
+
 				<div class="video">
-				    <img src="images/video-poster.png">
-				    <!-- <iframe width="100%" height="315" src="https://www.youtube.com/embed/ZGtuJWt6eGA?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen class="js-videoIframe"></iframe>-->
+					<img src="images/video-poster.png" class="video-button">
+					<div id="video-player-wrapper">
+					    <iframe width="100%" height="315" src="https://www.youtube.com/embed/ZGtuJWt6eGA?enablejsapi=1" data-play="0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen id="video-player" class="js-videoIframe"></iframe>
+					</div>
 				</div>
 			</div>
 		</section>
