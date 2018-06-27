@@ -45,7 +45,8 @@ var path = {
         img: [
             folders.src + 'images/*.*'
         ],
-        fonts: folders.src + 'fonts/**/*.*'
+        fonts: folders.src + 'fonts/**/*.*',
+        favicons: folders.src + 'favicons/**/*.*'
     },
     watch: {
         html: folders.src + '**/*.html',
@@ -106,12 +107,18 @@ gulp.task('fonts:build', function () {
         .pipe(gulp.dest(path.build.fonts))
 });
 
+gulp.task('copy:favicons', function () {
+    gulp.src(path.src.favicons)
+        .pipe(gulp.dest(path.build.html));
+});
+
 gulp.task('build', [
     'html:build',
     'js:build',
     'styles:build',
     'fonts:build',
-    'images:build'
+    'images:build',
+    'copy:favicons'
 ]);
 
 
